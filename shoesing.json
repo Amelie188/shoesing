@@ -1,0 +1,41 @@
+{
+  "chaussure": [
+    {
+      "id": 2,
+      "nom": "puma plus",
+      "marque": "Nike",
+      "type": "True",
+      "taille": 65,
+      "dateEntreStock": "2020-07-07",
+      "photo": "test++",
+      "estMixte": "True",
+      "description": "vdvdvdv",
+      "prix": 4644,
+      "date": "2020-06-17"
+    },
+    {
+      "id": 14,
+      "nom": "new paire",
+      "marque": "Nike",
+      "type": "Ville",
+      "taille": 40,
+      "dateEntreStock": "2020-06-26",
+      "photo": "test",
+      "estMixte": "False",
+      "description": "Super belle",
+      "prix": 125
+    },
+    {
+      "id": 15,
+      "nom": "New shoes 2",
+      "marque": "Adidas",
+      "type": "Sport",
+      "taille": 43,
+      "dateEntreStock": "2020-07-03",
+      "photo": "test2",
+      "estMixte": "True",
+      "description": "Cadeau de Noël",
+      "prix": 450
+    }
+  ]
+}

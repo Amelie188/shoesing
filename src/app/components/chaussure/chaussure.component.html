@@ -1,0 +1,46 @@
+<br>
+<br>
+<h1>Chaussures disponibles</h1>
+
+<br>
+<br>
+<button class="btn btn-warning"><a routerLink="/chaussure/ajout">Rentre une paire en stock</a></button> 
+<br>
+<br>
+
+<table *ngIf="!isLoading" class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Marque</th>
+      <th scope="col">Type</th>    
+      <th scope="col">Taille</th>
+      <th scope="col">Date d'entrée en stock</th>
+      <th scope="col">Photo</th>
+      <th scope="col">Cette paire est mixte?</th>
+      <th scope="col">Plus d'infos</th>
+      <th scope="col">Mise à jour</th>
+      <th scope="col">Suppression</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let chaussure of this.chaussure">
+      <td>{{ chaussure.id }}</td>
+      <td>{{ chaussure.nom }}</td>
+      <td>{{ chaussure.marque }}</td>
+      <td>{{ chaussure.type }}</td>
+      <td>{{ chaussure.taille }}</td>
+      <td>{{ chaussure.dateEntreStock }}</td>
+      <td>{{ chaussure.photo }}</td>
+      <td>{{ chaussure.estMixte }}</td>
+      <td><button class="btn btn-warning"><a [routerLink]="['/chaussure', chaussure.id]">Détails</a></button></td>
+      <td><button class="btn btn-warning"><a [routerLink]="['/chaussure/edit', chaussure.id]">Mise à jour</a></button></td>
+      <td><button class="btn btn-warning"><a (click)="deleteChaussure(chaussure.id)">Je supprime!</a></button></td>
+    </tr>
+</tbody>
+</table>
+
+<div *ngIf="isLoading">
+    Ca arrive, ca charge...!
+</div>

@@ -1,0 +1,18 @@
+
+
+
+<div *ngIf="!isLoading">
+    <h1>{{chaussure.nom}}</h1>
+    <h2>{{chaussure.photo}}</h2>
+    <h2>{{chaussure.marque}}</h2>
+    <h2>{{chaussure.taille}}</h2>
+    <h2>{{chaussure.description}}</h2>
+    <h2>{{chaussure.prix}}</h2>
+       
+</div>
+    
+<div *ngIf="isLoading">
+    Patience, ca charge...!
+</div>
+    
+    

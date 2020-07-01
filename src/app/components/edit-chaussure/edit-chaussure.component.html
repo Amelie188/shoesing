@@ -1,0 +1,90 @@
+<h1>Je modifie une paire de chaussure en stock!</h1>
+
+<form *ngIf="!isLoading" #chaussureForm="ngForm" (ngSubmit)="editChaussure()">
+
+<label for="nom">Nom</label>
+<input type="text" class="form-control" id="nom" name="nom" required [(ngModel)]="chaussure.nom" #nom="ngModel">
+<div [hidden]="nom.valid"
+class="alert alert-warning">
+Merci de renseigner un nom
+</div>  
+<br>
+
+<div>
+<label for="Marque">Marque</label>
+<input type="radio" value="Nike" name="marque" [(ngModel)]="chaussure.marque" required #marque="ngModel"> Nike
+<input type="radio" value="Adidas" name="marque" [(ngModel)]="chaussure.marque" required #marque="ngModel"> Adidas
+<input type="radio" value="Puma" name="marque" [(ngModel)]="chaussure.marque" required #marque="ngModel"> Puma
+</div>
+<br>
+
+
+<div>
+  <label for="Marque">Type de chaussure</label>
+  <input type="radio" value="Sport" name="type" [(ngModel)]="chaussure.type" required #type="ngModel"> Sport
+  <input type="radio" value="Ville" name="type" [(ngModel)]="chaussure.type" required #type="ngModel"> Ville
+  <input type="radio" value="Football" name="type" [(ngModel)]="chaussure.type" required #type="ngModel"> Football
+</div>
+<br>
+
+
+<label for="taille">Taille</label>
+<input type="number" class="form-control" id="taille" name="taille" required [(ngModel)]="chaussure.taille" #taille="ngModel">
+<div [hidden]="taille.valid"
+class="alert alert-warning">
+Merci de renseigner une taille
+</div>
+<br>
+
+
+<label for="dateEntreStock">Date d'entrée en stock</label>
+<input type="date" class="form-control" id="dateEntreStock" name="dateEntreStock" required [(ngModel)]="chaussure.dateEntreStock" #dateEntreStock="ngModel">
+<div [hidden]="dateEntreStock.valid"
+class="alert alert-warning">
+Merci de renseigner une date d'entrée en stock
+</div>
+<br>
+
+
+<label for="photo">Photo</label>
+<input type="string" class="form-control" id="photo" name="photo"  [(ngModel)]="chaussure.photo" #photo="ngModel">
+<div [hidden]="photo.valid"
+class="alert alert-warning">
+Merci de rajouter une photo
+</div> 
+<br>
+
+
+<div>
+  <label for="estMixte">Cette paire est mixte?</label>
+  <input type="radio" value="True" name="estMixte" [(ngModel)]="chaussure.estMixte" required #type="ngModel"> True
+  <input type="radio" value="False" name="estMixte" [(ngModel)]="chaussure.estMixte" required #type="ngModel"> False
+</div>
+<br>
+
+
+<label for="description">Description de la chaussure</label>
+<input type="string" class="form-control" id="description" name="description"  [(ngModel)]="chaussure.description" #description="ngModel">
+<div [hidden]="description.valid"
+class="alert alert-warning">
+Merci de renseigner une description
+</div>  
+<br>
+
+
+<label for="prix">Prix</label>
+<input type="number" class="form-control" id="prix" name="prix" required [(ngModel)]="chaussure.prix" #prix="ngModel">
+<div [hidden]="prix.valid"
+class="alert alert-warning">
+Merci de renseigner un prix
+</div>  
+<br>
+
+
+<input class="btn-lg btn-outline-dark" [disabled]="!chaussureForm.valid" type="submit">
+
+
+
+</form>
+
+<div *ngIf="isLoading">On prend son mal en patience, svp, ca arrive...</div>
